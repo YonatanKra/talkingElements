@@ -1,3 +1,4 @@
 <div *ngFor="let word of words">
-  <app-sixth-element-player [word]="word"></app-sixth-element-player>
+  <app-sixth-element-player [word]="word"
+                            (sound)="sound.next(word)"></app-sixth-element-player>
 </div>

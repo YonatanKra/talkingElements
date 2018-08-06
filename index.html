@@ -10,5 +10,21 @@ Angular App
 Custom Element
 <sixth-element-speaking></sixth-element-speaking>
 <script src="talkingElements.js"></script>
+<script>
+  function addCustomElement(elementType, dataProperty, data, parent, eventProperty, cb) {
+    const elRef = document.createElement(elementType);
+    elRef[dataProperty] = data;
+    if (eventProperty) {
+      elRef.addEventListener(eventProperty, cb);
+    }
+    if (!parent) {
+      parent = document.querySelector('body');
+    }
+    parent.appendChild(elRef);
+  }
+
+  // usage
+  // addCustomElement('sixth-element-speaking', 'words', ['Dad', 'Mom', 'Bamba'], null, 'sound', (event) => console.log(event.detail));
+</script>
 </body>
 </html>

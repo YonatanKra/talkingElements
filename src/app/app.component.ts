@@ -14,4 +14,8 @@ export class AppComponent implements OnInit {
     scriptElement.src = 'https://code.responsivevoice.org/responsivevoice.js';
     document.head.appendChild(scriptElement);
   }
+
+  public log(word) {
+    console.log(word);
+  }
 }

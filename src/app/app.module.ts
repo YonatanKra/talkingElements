@@ -4,8 +4,8 @@ import {Injector, NgModule, NO_ERRORS_SCHEMA} from '@angular/core';
 import { AppComponent } from './app.component';
 import { SixthElementSpeakingComponent } from './sixth-element-speaking/sixth-element-speaking.component';
 import { SixthElementPlayerComponent } from './sixth-element-player/sixth-element-player.component';
-import {TextToSpeechService} from "./text-to-speech.service";
-import {createCustomElement} from "@angular/elements";
+import {TextToSpeechService} from './text-to-speech.service';
+import {createCustomElement} from '@angular/elements';
 
 @NgModule({
   declarations: [
@@ -19,8 +19,7 @@ import {createCustomElement} from "@angular/elements";
   providers: [TextToSpeechService],
   bootstrap: [AppComponent],
   exports: [SixthElementSpeakingComponent],
-  entryComponents: [SixthElementSpeakingComponent],
-  schemas: [NO_ERRORS_SCHEMA]
+  entryComponents: [SixthElementSpeakingComponent]
 })
 export class AppModule {
   constructor(private injector: Injector) {
