@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation} from '@angular/core';
+import {Component, EventEmitter, Input, Output, ViewEncapsulation} from '@angular/core';
 import {TextToSpeechService} from '../text-to-speech.service';
 
 @Component({
@@ -7,16 +7,13 @@ import {TextToSpeechService} from '../text-to-speech.service';
   styleUrls: ['./sixth-element-player.component.css'],
   encapsulation: ViewEncapsulation.ShadowDom
 })
-export class SixthElementPlayerComponent implements OnInit {
+export class SixthElementPlayerComponent {
 
   @Input() word: string;
 
   @Output() sound = new EventEmitter();
 
   constructor(private player: TextToSpeechService) {
-  }
-
-  ngOnInit() {
   }
 
   public play(word) {

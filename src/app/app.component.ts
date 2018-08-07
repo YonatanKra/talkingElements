@@ -1,4 +1,4 @@
-import {Component, ElementRef, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,16 +6,17 @@ import {Component, ElementRef, OnInit} from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  constructor(private elRef: ElementRef) {
+  public phrases = [
+    'Leelo Dallas Muti Pass', 'I sixth element - supreme being!'
+  ];
+
+  constructor() {
 
   }
   ngOnInit() {
-    const scriptElement = document.createElement('script');
-    scriptElement.src = 'https://code.responsivevoice.org/responsivevoice.js';
-    document.head.appendChild(scriptElement);
   }
 
   public log(word) {
-    console.log(word);
+    console.log(`He said ${word}!!!`);
   }
 }

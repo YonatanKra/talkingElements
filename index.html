@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Talking Elements</title>
+  <meta charset="UTF-8">
+  <title>Talking Elements</title>
 </head>
 <body>
 Angular App
@@ -11,6 +11,14 @@ Custom Element
 <sixth-element-speaking></sixth-element-speaking>
 <script src="talkingElements.js"></script>
 <script>
+  function addToElementData(element, property, data) {
+    const dataArr = element[property];
+    if (typeof dataArr.length === 'undefined' || typeof dataArr != 'object') return;
+    const newArr = dataArr.slice(0);
+    newArr.push(data);
+    element[property] = newArr;
+  }
+
   function addCustomElement(elementType, dataProperty, data, parent, eventProperty, cb) {
     const elRef = document.createElement(elementType);
     elRef[dataProperty] = data;

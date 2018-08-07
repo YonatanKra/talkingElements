@@ -6,9 +6,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
   styleUrls: ['./sixth-element-speaking.component.css']
 })
 export class SixthElementSpeakingComponent implements OnInit {
-  @Input() words = [
-    'Korbin Dallas Muti Pass', 'I sixth element - supreme being!', 'Hello Speaker'
-  ];
+  @Input() words = [];
 
   @Output() sound = new EventEmitter();
 
