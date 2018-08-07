@@ -1,2 +1,5 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<app-sixth-element-speaking (sound)="log($event)" [words]="phrases"></app-sixth-element-speaking>
+<div class="speakingGrandpa">
+  <input [(ngModel)]="phrase">
+  <button (click)="speak()">Speak to the baby</button>
+</div>
+<app-sixth-element-speaking (sound)="getExcitedFromWord($event)" [words]="phrases"></app-sixth-element-speaking>

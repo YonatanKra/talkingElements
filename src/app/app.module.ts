@@ -6,6 +6,7 @@ import { SixthElementSpeakingComponent } from './sixth-element-speaking/sixth-el
 import { SixthElementPlayerComponent } from './sixth-element-player/sixth-element-player.component';
 import {TextToSpeechService} from './text-to-speech.service';
 import {createCustomElement} from '@angular/elements';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import {createCustomElement} from '@angular/elements';
     SixthElementPlayerComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [TextToSpeechService],
   bootstrap: [AppComponent],

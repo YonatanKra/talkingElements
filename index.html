@@ -3,14 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <title>Talking Elements</title>
+  <style>
+    .speakingGrandpa {
+      border: 2px red solid;
+      max-width: 200px;
+    }
+
+    hr {
+      border-width: 3px;
+    }
+  </style>
 </head>
 <body>
 Angular App
 <app-root></app-root>
+<hr>
 Custom Element
-<sixth-element-speaking></sixth-element-speaking>
+<div class="speakingGrandpa">
+  <input id="speaker">
+  <button onclick="speak()">Speak to the baby</button>
+</div>
+<sixth-element-speaking id="firstBornSpeaker"></sixth-element-speaking>
 <script src="talkingElements.js"></script>
 <script>
+  function speak() {
+    addToElementData(document.querySelector('#firstBornSpeaker'), 'words', document.querySelector('#speaker').value);
+  }
+
   function addToElementData(element, property, data) {
     const dataArr = element[property];
     if (typeof dataArr.length === 'undefined' || typeof dataArr != 'object') return;
@@ -28,6 +47,7 @@ Custom Element
     if (!parent) {
       parent = document.querySelector('body');
     }
+    parent.appendChild(document.createElement('hr'));
     parent.appendChild(elRef);
   }
 

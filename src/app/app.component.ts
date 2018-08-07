@@ -7,8 +7,11 @@ import {Component, OnInit} from '@angular/core';
 })
 export class AppComponent implements OnInit {
   public phrases = [
-    'Leelo Dallas Muti Pass', 'I sixth element - supreme being!'
+    'Leelo Dallas Muti Pass',
+    'I sixth element - supreme being!'
   ];
+
+  public phrase = '';
 
   constructor() {
 
@@ -16,7 +19,11 @@ export class AppComponent implements OnInit {
   ngOnInit() {
   }
 
-  public log(word) {
+  public getExcitedFromWord(word) {
     console.log(`He said ${word}!!!`);
+  }
+
+  public speak() {
+    this.phrases.push(this.phrase);
   }
 }
